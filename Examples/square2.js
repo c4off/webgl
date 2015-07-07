@@ -11,12 +11,21 @@ window.onload = function init()
     if ( !gl ) { alert( "WebGL isn't available" ); }
 
 
-    var vertices = new Float32Array([-1, -1, 0, 1, 1, -1]);
+    // Four Vertices
 
+    var vertices = new Float32Array([
+      -0.5, -0.5,
+      -0.5,  0.5,
+      0.5, 0.5,
+      0.5, -0.5
+    ]);
+
+
+    //
     //  Configure WebGL
-
+    //
     gl.viewport( 0, 0, canvas.width, canvas.height );
-    gl.clearColor( 1.0, 1.0, 1.0, 1.0 );
+    gl.clearColor( 0.0, 0.0, 0.0, 1.0 );
 
     //  Load shaders and initialize attribute buffers
 
@@ -41,5 +50,5 @@ window.onload = function init()
 
 function render() {
     gl.clear( gl.COLOR_BUFFER_BIT );
-    gl.drawArrays( gl.TRIANGLES, 0, 3 );
+    gl.drawArrays( gl.TRIANGLE_FAN, 0, 4 );
 }
