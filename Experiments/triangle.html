@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <script id="vertex-shader" type="x-shader/x-vertex">
 attribute vec4 vPosition;
 attribute vec4 vPosition2;
@@ -9,6 +10,16 @@ void
 main()
 {
     gl_Position = vPosition;
+}
+</script>
+
+<script id="vertex-shader2" type="x-shader/x-vertex">
+attribute vec4 vPosition2;
+
+void
+main()
+{
+    gl_Position = vPosition2;
 }
 </script>
 
@@ -24,6 +35,7 @@ main()
 
 <script type="text/javascript" src="../Common/webgl-utils.js"></script>
 <script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
 <script type="text/javascript" src="triangle.js"></script>
 </head>
 
